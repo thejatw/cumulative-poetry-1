@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CumulativePoetryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-08-08T18:45:03" hostname="in-Thejazetolhousa.local" time="0.008">
+<testsuite name="CumulativePoetryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-08T18:56:25" hostname="in-Thejazetolhousa.local" time="0.008">
   <properties/>
-  <testcase name="testCumulativePoetryForDayOne()" classname="CumulativePoetryTest" time="0.007"/>
-  <testcase name="testCumulativePoetryForDayTwo()" classname="CumulativePoetryTest" time="0.0"/>
+  <testcase name="testCumulativePoetryForDayFour()" classname="CumulativePoetryTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

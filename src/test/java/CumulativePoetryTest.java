@@ -20,4 +20,25 @@ class CumulativePoetryTest {
         String dayTwo = "This is the malt that lay in\n\tthe house that Jack built.";
         assertEquals(dayTwo, cumulativePoetry.getLineForDay(2));
     }
+
+    @Test
+    void testCumulativePoetryForDayThree() {
+        CumulativePoetry cumulativePoetry = new CumulativePoetry();
+
+        String dayTwo = "This is the rat that ate"
+                        + "\n\tthe malt that lay in"
+                        + "\n\tthe house that Jack built.";
+        assertEquals(dayTwo, cumulativePoetry.getLineForDay(3));
+    }
+
+    @Test
+    void testCumulativePoetryForDayFour() {
+        CumulativePoetry cumulativePoetry = new CumulativePoetry();
+
+        String dayTwo = "This is the cat that killed"
+                        + "\n\tthe rat that ate"
+                        + "\n\tthe malt that lay in"
+                        + "\n\tthe house that Jack built.";
+        assertEquals(dayTwo, cumulativePoetry.getLineForDay(4));
+    }
 }
