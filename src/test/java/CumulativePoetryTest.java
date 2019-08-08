@@ -20,5 +20,4 @@ class CumulativePoetryTest {
         String dayTwo = "This is the malt that lay in\n\tthe house that Jack built.";
         assertEquals(dayTwo, cumulativePoetry.getLineForDay(2));
     }
-
 }
