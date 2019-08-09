@@ -1,45 +1,63 @@
 public class CumulativePoetry {
-    private String[] lineForDay;
+    private static String[] lineForDay = {"the horse and the hound and the horn that belonged to",
+            "the farmer sowing his corn that kept",
+            "the rooster that crowed in the morn that woke",
+            "the priest all shaven and shorn that married",
+            "the man all tattered and torn that kissed",
+            "the maiden all forlorn that milked",
+            "that cow with the crumpled horn that tossed",
+            "the dog that worried",
+            "the cat that killed",
+            "the rat that ate",
+            "the malt that lay in",
+            "the house that Jack built."
+    };
 
     /**
      * Constructor
      */
     public CumulativePoetry() {
-        populateLines();
     }
 
     /**
-     * Allocate memory for lines of each day and populate them with respective lines in reverse chronological order
+     * Get poem line up to a specific day
+     *
+     * params:
+     *   day: number of days up to which poem queried
+     * returns:
+     *   poem string up to day queries
      */
-    private void populateLines() {
-        lineForDay = new String[12];
-
-        lineForDay[11] = "the horse and the hound and the horn that belonged to";
-        lineForDay[10] = "the farmer sowing his corn that kept";
-        lineForDay[9] = "the rooster that crowed in the morn that woke";
-        lineForDay[8] = "the priest all shaven and shorn that married";
-        lineForDay[7] = "the man all tattered and torn that kissed";
-        lineForDay[6] = "the maiden all forlorn that milked";
-        lineForDay[5] = "that cow with the crumpled horn that tossed";
-        lineForDay[4] = "the dog that worried";
-        lineForDay[3] = "the cat that killed";
-        lineForDay[2] = "the rat that ate";
-        lineForDay[1] = "the malt that lay in";
-        lineForDay[0] = "the house that Jack built.";
-    }
-
-    public String getLineForDay(int day) {
+     public static String getLineForDay(int day) {
         StringBuilder poemForDay = new StringBuilder("This is ");
+        int today = 12-day;
+        while (today < 12) {
+            poemForDay.append(lineForDay[today]);
+            today++;
 
-        while (day > 0) {
-            poemForDay.append(lineForDay[day - 1]);
-            day--;
-
-            if (day > 0) {
+            if (today < 12) {
                 poemForDay.append("\n\t");
             }
         }
 
         return poemForDay.toString();
+    }
+
+    public static void main(String[] args) {
+         if (args.length == 0)
+             throw new IllegalArgumentException("Wrong number of arugments");
+
+        if(args[0].equals("--recite")) {
+            for(int day=1; day<=12; ++day) {
+                System.out.println("Day " + day + " -\n" + getLineForDay(day));
+            }
+        }
+        else if (args[0].equals("--reveal-for-day") && args.length==2) {
+            int day = Integer.parseInt(args[1]);
+
+            System.out.println(getLineForDay(day));
+        }
+        else {
+            throw new IllegalArgumentException("Wrong arguments passed");
+        }
     }
 }
