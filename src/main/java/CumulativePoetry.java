@@ -44,7 +44,7 @@ public class CumulativePoetry {
 
     public static void main(String[] args) {
          if (args.length == 0)
-             throw new IllegalArgumentException("Wrong number of arugments");
+             throw new IllegalArgumentException("Too few arguments provided");
 
         if(args[0].equals("--recite")) {
             for(int day=1; day<=12; ++day) {
@@ -57,7 +57,7 @@ public class CumulativePoetry {
             System.out.println(getLineForDay(day));
         }
         else {
-            throw new IllegalArgumentException("Wrong arguments passed");
+            throw new IllegalArgumentException("Wrong argument format passed");
         }
     }
 }
